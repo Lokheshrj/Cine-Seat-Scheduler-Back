@@ -1,0 +1,11 @@
+import express from "express";
+import { deleteUser, getAllUsers, getBookingsOfUser, getUserById, login, signUp, updateUser } from "./controller_user.js";
+const userrouter=express.Router();
+userrouter.get("/", getAllUsers);
+userrouter.get("/:id", getUserById);
+userrouter.post("/signup",signUp);
+userrouter.put("/:id", updateUser);
+userrouter.delete("/:id", deleteUser);
+userrouter.post("/login",login);
+userrouter.get("/booking/:id",getBookingsOfUser);
+export default userrouter;
